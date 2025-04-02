@@ -11,7 +11,7 @@
         <h1>Help-Now</h1>
         <p style="text-align: center;">
             Átila Bastos Gomes <br>
-            Giovanne Ferreira Reis <br>
+            Giovanne Ramos Ferreira <br>
             João Pedro Zeferino <br>
             José Guilherme Azevedo <br>
             Matheus Eduardo da Silva <br>
@@ -31,6 +31,7 @@
             </p>
         </div>
     </div>
+
 
 </body>
 
