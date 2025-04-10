@@ -36,4 +36,5 @@
 
 </html>
 
-[Fluxograma](documents/Links.txt)
+[Fluxograma](documents/Fluxograma.jpeg)
+[Capa](documents/ETEC ROSA PERRONE.docx).
