@@ -1,0 +1,31 @@
+---Planejamento TCC ---
+
+Aplicativo(versões):
+
+-App que conecta bluetooth
+-App que Envia e recebe sinais Serial
+-Integração de mapa no app
+-Primeiros segmentos do design
+-Rastreamento de localização quando acionado
+
+Implementações futuras:
+   
+4G:
+   -cálculo de localização via potência de sinal Bluetooth
+
+GPS:
+   -Obtenção de um GPS mais preciso
+
+Código ESP (Alterações)
+
+-Conversão do código de C++ para Python
+-Integração com Wi-fi
+-Integração da biblioteca da OpenAI
+-Recebimento de comandos de voz via texto pelo celular
+-Integração do microfone
+
+Implementações futuras:
+
+-Raspberry PI
+-Botão se comunica com ESP isoladamente(tag)	
+ 
