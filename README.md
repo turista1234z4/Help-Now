@@ -40,40 +40,40 @@
 
 # Configurando App expo 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Esse é um projeto [Expo](https://expo.dev) criado com [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-## Get started
+## Iniciando
 
-1. Install dependencies
+1. Instalando dependências
 
    ```bash
    npm install
    ```
 
-2. Start the app
+2. Iniciando App
 
    ```bash
     npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+Na saída, você vai encontrar as seguintes opções para abrir o app:
 
 - [development build](https://docs.expo.dev/develop/development-builds/introduction/)
 - [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
 - [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- [Expo Go](https://expo.dev/go) (Recomendado)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+You can start developing by editing the files inside the **app** directory. Esse projeto usa [file-based routing](https://docs.expo.dev/router/introduction).
 
-## Get a fresh project
+## Criando um projeto em branco
 
-When you're ready, run:
+Quando estiver pronto, rode:
 
 ```bash
 npm run reset-project
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Este comando vai mover o código inicial para o diretório **app-example** e criar um diretório **app** em branco quando você começar a desenvolver.
 
 ## Learn more
 
@@ -88,4 +88,5 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
 
