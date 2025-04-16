@@ -63,7 +63,7 @@ Na saída, você vai encontrar as seguintes opções para abrir o app:
 - [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
 - [Expo Go](https://expo.dev/go) (Recomendado)
 
-You can start developing by editing the files inside the **app** directory. Esse projeto usa [file-based routing](https://docs.expo.dev/router/introduction).
+Você pode começar a desenvolver editando os arquivos dentro do diretório **app**. Esse projeto usa [file-based routing](https://docs.expo.dev/router/introduction).
 
 ## Criando um projeto em branco
 
