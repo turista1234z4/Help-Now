@@ -1,0 +1,81 @@
+#include <WiFi.h>
+#include <HTTPClient.h>
+
+// Configurações de WiFi
+const char* ssid = "ESPTEST";
+const char* password = "15072025";
+
+
+// URL do seu arquivo PHP
+String serverName = "https://darkslategray-sheep-864668.hostingersite.com/receiver.php";
+
+// Pino do receptor RF
+const int rfPin = 27;  // ajuste para o pino que você conectou
+int contadorUm = 0;    // Contador de '1's seguidos
+const int limiteUm = 10; // Quantidade de 1's para reconhecer como SOS
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(rfPin, INPUT);
+
+  WiFi.begin(ssid, password);
+  Serial.print("Conectando ao WiFi...");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("\nConectado ao WiFi!");
+}
+
+void loop() {
+  // Leitura do sinal do receptor RF
+  int sinal = digitalRead(rfPin);
+
+  if (sinal == HIGH) {
+    contadorUm++;
+    delay(10); // debounce / evitar leitura muito rápida
+  } else {
+    contadorUm = 0; // reset caso não seja '1' contínuo
+  }
+
+  // Se detectou sequência suficiente de 1's
+  if (contadorUm >= limiteUm) {
+    Serial.println(">>> ALERTA SOS DETECTADO <<<");
+    enviarDados("alerta SOS");
+    contadorUm = 0; // resetar para esperar o próximo alerta
+    delay(1000);    // pequena pausa para não mandar repetido
+  }
+
+  // Também permite digitar no Serial Monitor manualmente (teste/debug)
+  if (Serial.available() > 0) {
+    String valor = Serial.readStringUntil('\n');
+    valor.trim();
+    if (valor.length() > 0) {
+      enviarDados(valor);
+    }
+  }
+}
+
+void enviarDados(String valor) {
+  if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;
+    http.begin(serverName);
+    http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    String postData = "valor=" + valor;
+    int httpResponseCode = http.POST(postData);
+
+    if (httpResponseCode > 0) {
+      String resposta = http.getString();
+      Serial.print("Resposta do servidor: ");
+      Serial.println(resposta);
+    } else {
+      Serial.print("Erro HTTP: ");
+      Serial.println(httpResponseCode);
+    }
+
+    http.end();
+  } else {
+    Serial.println("WiFi desconectado!");
+  }
+}
