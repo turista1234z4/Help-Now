@@ -36,7 +36,9 @@
 
 </html>
 
-[Fluxograma](documents/Fluxograma.jpeg) 
+[Fluxograma](documents/Fluxograma.jpeg) <br>
+[Relatório de Pesquisa](documentos/Relatório%20HELP%20NOW%20IOT%20PARA%20BUSCA%20E%20RESGATE%20-%20FETEPS.pdf)
+
 
 # Configurando App expo 👋
 
